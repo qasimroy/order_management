@@ -4,7 +4,7 @@ const App = () => {
     return (
         <div>
             <h1 className="font-bold text-[30px] bg-slate-500 max-w-80">
-                Hello World!
+                Hello World! Order
             </h1>
         </div>
     );
