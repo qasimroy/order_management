@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('bill_to_address_id')->nullable();
             $table->unsignedBigInteger('payment_id')->nullable();
             $table->unsignedBigInteger('order_store_assignment_id')->nullable();
-            $table->integer('line_items');
+            $table->integer('line_items')->default(0);
             $table->unsignedBigInteger('source_order_id');
             $table->string('source_order_no');
             $table->string('created_by')->nullable();
