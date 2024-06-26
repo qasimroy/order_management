@@ -219,8 +219,12 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
 
-        $order->update($request->all());
+        $data = $request->all();
+        $data['updated_at'] = now();
+        $data['updated_by'] = 'QASIM';
 
-        return response()->json($order);
+        $order->update($data);
+
+        return response()->json($data);
     }
 }
