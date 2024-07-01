@@ -98,7 +98,6 @@ class OrderController extends Controller
         $shipToAddress = $request->has('ship_to_address_id') ? ShipToAddress::find($request->ship_to_address_id) : null;
 
         // Ensure that customer, billToAddress, and shipToAddress are not null before accessing their properties
-
         $order = Order::create([
             'source_id' => $validated['source_id'],
             'ref_order_id' => $validated['ref_order_id'],
