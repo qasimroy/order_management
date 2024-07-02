@@ -18,7 +18,6 @@ class AuthController extends Controller
             'message' => 'Profile Info',
             'data' => $userData,
             'id' => auth()->user()->id,
-            'token' => auth()->user()->tokens()
         ],200);
     }
     public function register(Request $request)
