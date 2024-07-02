@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Authentication\AuthController;
+use App\Http\Controllers\Api\Authentication\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;

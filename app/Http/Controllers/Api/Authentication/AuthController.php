@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Authentication;
+namespace App\Http\Controllers\Api\Authentication;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
@@ -107,7 +107,7 @@ class AuthController extends Controller
             'status' => true,
             'message' => 'User Logged Out Successfully!',
             'data' => []
-        ], 200)->cookie('token', '', -1);;
+        ], 200)->cookie('token', '', -1)->redirect("/login");
     }
 
 
