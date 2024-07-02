@@ -85,12 +85,13 @@ class AuthController extends Controller
             }
 
             $user = User::where('email', $request->email)->first();
+            $token = $user->createToken('auth_token')->plainTextToken;
 
             return response()->json([
                 'status' => true,
                 'message' => 'User Logged In Successfully',
-                'token' => $user->createToken("API TOKEN")->plainTextToken
-            ], 200);
+                'token' => $token
+            ], 200)->cookie('token', $token, 60 * 24 * 30, '/', null, true, true);
 
         } catch (\Throwable $th) {
             return response()->json([
@@ -106,7 +107,7 @@ class AuthController extends Controller
             'status' => true,
             'message' => 'User Logged Out Successfully!',
             'data' => []
-        ], 200);
+        ], 200)->cookie('token', '', -1);;
     }
 
 

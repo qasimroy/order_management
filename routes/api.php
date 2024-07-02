@@ -11,7 +11,7 @@ use App\Http\Controllers\OrderController;
 Route::post("/auth/register", [AuthController::class, "register"]);
 Route::post('/auth/login', [AuthController::class, 'login']);
 
-Route::group(["middleware"=> ['auth:sanctum']],function(){
+Route::group(["middleware"=> ['auth:sanctum','verify.token']],function(){
     Route::get("/", [AuthController::class, 'index']);
     Route::get("/auth/logout", [AuthController::class, 'logout']);
 });
