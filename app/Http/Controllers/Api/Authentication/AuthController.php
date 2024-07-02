@@ -91,7 +91,7 @@ class AuthController extends Controller
                 'status' => true,
                 'message' => 'User Logged In Successfully',
                 'token' => $token
-            ], 200)->cookie('token', $token, 60 * 24 * 30, '/', null, true, true);
+            ], 200)->cookie('XSRF-TOKEN', $token, 60 * 24 , '/', null, false, true, 'none');
 
         } catch (\Throwable $th) {
             return response()->json([
